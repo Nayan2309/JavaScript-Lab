@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Password Validation</h2>
+
+        <div class="input-group">
+            <input type="text" id="username" placeholder="Username" required>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn">Submit</button>
+
+        <p class="signin-text">Don't have an account? <a href="#">Sign In</a></p>
+
+        <!-- यह लिस्ट शुरुआत में छुपी रहेगी -->
+        <ul class="requirements">
+            <li id="length">Minimum 8 Characters</li>
+            <li id="capital">Must contain 1 Capital Letter</li>
+            <li id="small">Contains 1 Small Letter</li>
+            <li id="number">Must contain 1 Number</li>
+            <li id="special">Must contain 1 Special Character</li>
+        </ul>
+
+        <div class="footer-credit">
+            Made by Nayan Awalapane (24070521010)
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
