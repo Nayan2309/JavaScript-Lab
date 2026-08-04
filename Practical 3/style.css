@@ -1,0 +1,143 @@
+/* नया प्रीमियम और सॉफ्ट बैकग्राउंड कलर */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #e8f5e9); /* सॉफ्ट मिंट और ब्लू */
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 360px;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* हल्की और साफ शैडो */
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #5a6a85;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #f8fafc;
+}
+
+input:focus {
+    border-color: #007BFF;
+    background-color: #fff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* रिजल्ट बॉक्स - नया हाइलाइटेड स्टाइल */
+#result {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: left;
+    display: none; /* शुरू में छुपा रहेगा */
+}
+
+/* जब रिजल्ट पास या फेल हो तो बॉक्स दिखे */
+#result.passed, #result.failed, #result.error {
+    display: block;
+}
+
+.res-row {
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+/* ग्रेड को अलग से बड़ा और बोल्ड हाइलाइट करने के लिए */
+.grade-badge {
+    margin-top: 12px;
+    padding: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800; /* एक्स्ट्रा बोल्ड */
+    border-radius: 6px;
+    text-transform: uppercase;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* पास की स्थिति में गहरा हरा और मजबूत बॉर्डर */
+#result.passed { 
+    background-color: #e6f4ea; 
+    border: 2px solid #34a853; 
+}
+#result.passed .grade-badge { 
+    background-color: #34a853; 
+    color: white; 
+}
+
+/* फेल की स्थिति में गहरा लाल और मजबूत बॉर्डर */
+#result.failed { 
+    background-color: #fce8e6; 
+    border: 2px solid #ea4335; 
+}
+#result.failed .grade-badge { 
+    background-color: #ea4335; 
+    color: white; 
+}
+
+/* एरर मैसेज के लिए */
+#result.error { 
+    background-color: #fef3c7; 
+    color: #92400e; 
+    border: 1px solid #f59e0b; 
+    text-align: center;
+    font-weight: bold;
+}
+
+/* क्रेडिट टेक्स्ट स्टाइल */
+.footer-credit {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    letter-spacing: 0.5px;
+}
