@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grading System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Grading System</h2>
+        <form id="gradingForm" onsubmit="calculateGrade(event)">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" placeholder="e.g., John Doe">
+
+            <label for="score">Enter Student Marks (0-100):</label>
+            <input type="number" id="score" step="0.1" placeholder="e.g., 85.5">
+            
+            <button type="submit">Calculate Grade</button>
+        </form>
+
+        <div id="result"></div>
+        
+        <!-- बहुत हल्के रंग में आपका नाम और रोल नंबर -->
+        <div class="footer-credit">Made by Nayan awalapane 24070521010</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
