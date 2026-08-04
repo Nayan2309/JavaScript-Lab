@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>SmartCart Store</title> 
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+<link 
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" 
+rel="stylesheet"> 
+</head> 
+<body> 
+<header> 
+<h1>     SmartCart Store</h1> 
+<p>Smart Shopping Experience With Quality Products</p> 
+</header> 
+<div class="container"> 
+<div class="customer"> 
+<h2>Customer Details</h2> 
+<center> 
+<input id="name" placeholder="Customer Name"> 
+<input id="phone" placeholder="Phone Number"> 
+<input id="coupon" placeholder="Coupon SAVE10"> 
+<p class="coupon"> 
+Use <b>SAVE10</b> for 10% Discount 
+</p> 
+</center> 
+</div> 
+<div class="products"> 
+{% for p in products %} 
+<div class="card"> 
+<img src="{{ p.image }}" alt="{{ p.name }}"> 
+<h3>{{ p.name }}</h3> 
+<p class="price">₹{{ p.price }}</p> 
+Qty 
+<input class="qty" id="q{{ loop.index }}" type="number" value="0"> 
+</div> 
+{% endfor %} 
+</div> 
+<br> 
+<center> 
+<button onclick="bill()">Generate Bill</button> 
+</center> 
+<div class="bill"> 
+<h2 align="center">   
+<table> 
+<tr> 
+<th>Name</th> 
+<td id="cname"></td> 
+</tr> 
+<tr> 
+<th>Phone</th> 
+<td id="cphone"></td> 
+Customer Bill</h2> 
+</tr> 
+<tr> 
+<th>Date</th> 
+<td id="date"></td> 
+</tr> 
+</table> 
+<br> 
+<table> 
+<tr> 
+<th>Product</th> 
+<th>Price</th> 
+<th>Qty</th> 
+<th>Amount</th> 
+</tr> 
+<tr> 
+<td>Sports Shoes</td> 
+<td>1500</td> 
+<td id="qq1"></td> 
+<td id="a1"></td> 
+</tr> 
+<tr> 
+<td>Smart Watch</td> 
+<td>2500</td> 
+<td id="qq2"></td> 
+<td id="a2"></td> 
+</tr> 
+<tr> 
+<td>Headphones</td> 
+<td>1200</td> 
+<td id="qq3"></td> 
+<td id="a3"></td> 
+</tr> 
+<tr> 
+<td>T-Shirt</td> 
+<td>800</td> 
+<td id="qq4"></td> 
+<td id="a4"></td> 
+</tr> 
+<tr> 
+<td>Hand Bag</td> 
+<td>2200</td> 
+<td id="qq5"></td> 
+<td id="a5"></td> 
+</tr> 
+<tr> 
+<td>Sunglasses</td> 
+<td>900</td> 
+<td id="qq6"></td> 
+<td id="a6"></td> 
+</tr> 
+<tr> 
+<th colspan="3">Discount</th> 
+<td id="discount"></td> 
+</tr> 
+<tr> 
+<th colspan="3">Total Bill</th> 
+<td id="total"></td> 
+</tr> 
+</table> 
+<h3 id="msg" class="thanks"></h3> 
+</div> 
+</div> 
+<footer> 
+SmartCart Store © 2026 | Powered By Flask REST API      
+</footer> 
+<script> 
+function bill(){ 
+let prices=[1500,2500,1200,800,2200,900]; 
+let total=0; 
+document.getElementById("cname").innerHTML=document.getElementById("name").value; 
+document.getElementById("cphone").innerHTML=document.getElementById("phone").value; 
+document.getElementById("date").innerHTML=new Date().toLocaleDateString(); 
+for(let i=1;i<=6;i++){ 
+let qty=Number(document.getElementById("q"+i).value); 
+let amount=qty*prices[i-1]; 
+document.getElementById("qq"+i).innerHTML=qty; 
+document.getElementById("a"+i).innerHTML="₹"+amount; 
+total+=amount; 
+} 
+let discount=0; 
+if(document.getElementById("coupon").value=="SAVE10"){ 
+discount=total*0.10; 
+} 
+total=total-discount; 
+document.getElementById("discount").innerHTML="₹"+discount; 
+document.getElementById("total").innerHTML="₹"+total; 
+document.getElementById("msg").innerHTML="              
+} 
+</script> 
+</body> 
+</html>
