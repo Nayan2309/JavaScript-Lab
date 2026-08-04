@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vehicle Registration Validation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <div class="container">
+
+        <div class="icon">🚗</div>
+
+        <h2>Vehicle Registration Validation</h2>
+
+        <p class="subtitle">
+            Enter your vehicle registration number
+        </p>
+
+        <input
+            type="text"
+            id="regNo"
+            placeholder="Example: MH12AB1234"
+            maxlength="10"
+        >
+
+        <button onclick="validateRegistration()">
+            Validate Registration
+        </button>
+
+        <p id="result"></p>
+
+        <div class="rules">
+
+            <h3>Validation Rules</h3>
+
+            <p id="rule1">○ Exactly 10 characters</p>
+
+            <p id="rule2">○ First 2 characters must be uppercase letters</p>
+
+            <p id="rule3">○ Next 2 characters must be digits</p>
+
+            <p id="rule4">○ Next 2 characters must be uppercase letters</p>
+
+            <p id="rule5">○ Last 4 characters must be digits</p>
+
+        </div>
+
+    </div>
+
+    <div class="student-info">
+        Nayan Awalapane | 24070521010
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
