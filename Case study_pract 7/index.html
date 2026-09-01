@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Registration Form</h2>
+
+        <form id="registrationForm">
+
+            <!-- First Name -->
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" placeholder="Enter first name">
+            <span id="firstnameError" class="error"></span>
+
+
+            <!-- Last Name -->
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" placeholder="Enter last name">
+            <span id="lastnameError" class="error"></span>
+
+
+            <!-- Birthday -->
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday">
+            <span id="birthdayError" class="error"></span>
+
+
+            <!-- Username -->
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username">
+            <span id="usernameError" class="error"></span>
+
+
+            <!-- Email ID -->
+            <label for="emailid">Email ID</label>
+            <input type="text" id="emailid" placeholder="Enter email address">
+            <span id="emailError" class="error"></span>
+
+
+            <!-- Website -->
+            <label for="website">Website</label>
+            <input type="text" id="website" placeholder="https://example.com">
+            <span id="websiteError" class="error"></span>
+
+
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <span id="passwordError" class="error"></span>
+
+
+            <!-- Re-enter Password -->
+            <label for="repassword">Re-enter Password</label>
+            <input type="password" id="repassword" placeholder="Re-enter password">
+            <span id="repasswordError" class="error"></span>
+
+
+            <!-- Agree to Terms -->
+            <div class="agree">
+
+                <input type="checkbox" id="agree">
+
+                <label for="agree">
+                    I agree to the terms and conditions
+                </label>
+
+            </div>
+
+            <span id="agreeError" class="error"></span>
+
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+
+
+            <!-- Success Message -->
+            <p id="message"></p>
+
+
+            <!-- Student Information -->
+            <div class="student-info">
+
+                <p>
+                 Nayan Awalapane [24070521010]
+                </p>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
