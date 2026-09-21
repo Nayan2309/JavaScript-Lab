@@ -1,0 +1,113 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    min-height:100vh;
+    background:#f5f7f6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Main Card */
+.container{
+    width:440px;
+    background:white;
+    padding:35px 38px;
+    border-radius:14px;
+    box-shadow:0 12px 35px rgba(0,0,0,0.12);
+    border:1px solid #e5e5e5;
+}
+
+/* Heading */
+h2{
+    text-align:center;
+    font-size:27px;
+    margin-bottom:30px;
+    color:#111;
+}
+
+/* Form labels */
+label{
+    display:block;
+    margin-top:17px;
+    margin-bottom:7px;
+    font-size:14px;
+    font-weight:bold;
+    color:#333;
+}
+
+/* Inputs */
+input,
+select{
+    width:100%;
+    height:45px;
+    padding:0 13px;
+    border:1px solid #d0d0d0;
+    border-radius:6px;
+    font-size:14px;
+    background:#fff;
+    outline:none;
+    transition:0.2s;
+}
+
+input:focus,
+select:focus{
+    border-color:#008000;
+    box-shadow:0 0 0 3px rgba(0,128,0,0.08);
+}
+
+/* Error messages */
+.error{
+    display:block;
+    color:#e53935;
+    font-size:12px;
+    margin-top:5px;
+    min-height:14px;
+}
+
+/* Submit Button */
+button{
+    width:100%;
+    height:46px;
+    margin-top:24px;
+    background:#008000;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    background:#006b00;
+    transform:translateY(-1px);
+}
+
+button:active{
+    transform:translateY(0);
+}
+
+/* Success Message */
+.success{
+    color:#008000;
+    font-size:14px;
+    font-weight:bold;
+    text-align:center;
+    margin-top:18px;
+}
+.container::after{
+    content:"Nayan Awalapane [24070521010]";
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    font-size:13px;
+    color:#777;
+    font-weight:bold;
+}
