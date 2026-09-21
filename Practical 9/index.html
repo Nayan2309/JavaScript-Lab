@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Preferences</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>User Preferences</h2>
+
+        <p class="description">
+            Implement LocalStorage and SessionStorage to save user preferences
+        </p>
+
+
+        <!-- User Name -->
+
+        <div class="input-box">
+
+            <label for="username">
+                Enter Your Name:
+            </label>
+
+            <input type="text"
+                   id="username"
+                   placeholder="Enter your name">
+
+        </div>
+
+
+        <!-- Storage Buttons -->
+
+        <div class="box">
+
+            <h3>Save User Information</h3>
+
+            <button onclick="saveLocal()">
+                Save using LocalStorage
+            </button>
+
+            <button onclick="saveSession()">
+                Save using SessionStorage
+            </button>
+
+        </div>
+
+
+        <!-- Theme -->
+
+        <div class="box">
+
+            <h3>Choose Theme</h3>
+
+            <button onclick="setLightTheme()">
+                Light Theme
+            </button>
+
+            <button onclick="setDarkTheme()">
+                Dark Theme
+            </button>
+
+        </div>
+
+
+        <!-- Stored Data -->
+
+        <div class="box">
+
+            <h3>Saved Preferences</h3>
+
+            <p>
+                <b>Current Theme:</b>
+                <span id="currentTheme">Light</span>
+            </p>
+
+            <p>
+                <b>LocalStorage:</b>
+                <span id="localStatus">Not Saved</span>
+            </p>
+
+            <p>
+                <b>SessionStorage:</b>
+                <span id="sessionStatus">Not Saved</span>
+            </p>
+
+        </div>
+
+
+        <!-- Clear Button -->
+
+        <button class="clear-btn" onclick="clearPreferences()">
+            Clear Preferences
+        </button>
+
+
+        <!-- Student Details -->
+
+        <div class="student-info">
+
+            <p>
+                <b>Name:</b> Nayan Awalapane
+            </p>
+
+            <p>
+                <b>PRN:</b>24070521010
+                
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
