@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f2f2f2;
+
+    margin: 0;
+
+    padding: 40px;
+}
+
+
+/* Main Container */
+.container {
+    width: 90%;
+
+    margin: auto;
+
+    background-color: white;
+
+    padding: 20px;
+
+    border: 1px solid #999;
+
+    box-shadow: 0 0 8px #aaa;
+}
+
+
+/* Heading */
+h2 {
+    text-align: center;
+
+    color: #333;
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+}
+
+
+/* Schedule Table */
+.schedule {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    text-align: center;
+}
+
+
+/* Table Heading */
+.schedule th {
+    background-color: #dbe4f0;
+
+    font-size: 16px;
+
+    padding: 12px;
+
+    border: 1px solid #777;
+}
+
+
+/* Table Cells */
+.schedule td {
+    border: 1px solid #777;
+
+    padding: 15px;
+}
+
+
+/* Time Column */
+.schedule td:first-child {
+    font-weight: bold;
+
+    background-color: #f5f5f5;
+
+    cursor: default;
+}
+
+
+/* Clickable Schedule Cells */
+.schedule td:not(:first-child) {
+    cursor: pointer;
+}
+
+
+/* Hover Effect */
+.schedule td:not(:first-child):hover {
+    background-color: #e6e6e6;
+}
+
+
+/* Lunch Break */
+.break {
+    background-color: #eeeeee;
+
+    font-weight: bold;
+
+    cursor: default !important;
+}
+
+
+/* Student Information */
+.student-info {
+    margin-top: 10px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #555;
+}
+
+
+.student-info p {
+    margin: 2px;
+}
