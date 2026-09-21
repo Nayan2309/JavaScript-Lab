@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Admission Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Gym Admission Registration Form</h2>
+
+        <form id="gymForm">
+
+            <table>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+
+                <!-- Name -->
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" id="name" placeholder="Enter your name">
+                        <span class="error" id="nameError"></span>
+                    </td>
+                </tr>
+
+                <!-- Sex -->
+                <tr>
+                    <td>Sex</td>
+                    <td>
+
+                        <label>
+                            <input type="radio" name="sex" value="Male">
+                            Male
+                        </label>
+
+                        <br>
+
+                        <label>
+                            <input type="radio" name="sex" value="Female">
+                            Female
+                        </label>
+
+                        <span class="error" id="sexError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Eye Color -->
+                <tr>
+                    <td>Eye color</td>
+                    <td>
+
+                        <select id="eyeColor">
+
+                            <option value="">Select</option>
+                            <option value="Green">Green</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Black">Black</option>
+
+                        </select>
+
+                        <span class="error" id="eyeError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Checkboxes -->
+                <tr>
+                    <td>Check all that apply</td>
+
+                    <td>
+
+                        <label>
+                            <input type="checkbox" name="fitness" value="Over 6 feet tall">
+                            Over 6 feet tall
+                        </label>
+
+                        <br>
+
+                        <label>
+                            <input type="checkbox" name="fitness" value="Over 200 pounds">
+                            Over 200 pounds
+                        </label>
+
+                    </td>
+                </tr>
+
+                <!-- Athletic Ability -->
+                <tr>
+                    <td>Describe your athletic ability:</td>
+
+                    <td>
+
+                        <textarea id="ability"
+                            rows="5"
+                            placeholder="Describe your athletic ability">
+                        </textarea>
+
+                        <span class="error" id="abilityError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Submit Button -->
+                <tr>
+                    <td colspan="2" class="button-row">
+
+                        <button type="submit">
+                            Enter my information
+                        </button>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+        <!-- Result -->
+        <div id="result"></div>
+
+        <!-- Student Details -->
+        <div class="student-info">
+
+            <p><b>Name:</b>Nayan Awalapane</p>
+            <p><b>PRN:</b>24070521010</p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
