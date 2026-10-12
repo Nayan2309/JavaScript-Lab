@@ -1,0 +1,611 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090707">
+    <title>Contact | Nayan Awalapane</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #090707;
+            --surface: #151011;
+            --surface-light: #201417;
+            --burgundy: #7f263b;
+            --burgundy-light: #a63b55;
+            --gold: #e5c58a;
+            --gold-light: #f5dfb0;
+            --text: #f7f0e8;
+            --muted: #b9aaa6;
+            --border: rgba(229, 197, 138, 0.19);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .contact-section {
+            min-height: 100vh;
+            padding: 120px 8% 70px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 12% 15%,
+                    rgba(127, 38, 59, 0.23),
+                    transparent 34%
+                ),
+                radial-gradient(
+                    circle at 88% 80%,
+                    rgba(229, 197, 138, 0.08),
+                    transparent 30%
+                ),
+                var(--bg);
+        }
+
+        .contact-section::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 12%;
+            right: -130px;
+            background: rgba(127, 38, 59, 0.20);
+            filter: blur(100px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--gold);
+            border: 1px solid var(--border);
+            background: rgba(127, 38, 59, 0.16);
+            border-radius: 30px;
+            padding: 8px 18px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .section-heading h1 {
+            font-size: clamp(34px, 5vw, 58px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 17px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                100deg,
+                var(--gold-light),
+                var(--gold),
+                var(--burgundy-light)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .contact-card {
+            min-width: 0;
+            background: linear-gradient(
+                145deg,
+                rgba(32, 20, 23, 0.96),
+                rgba(16, 12, 13, 0.97)
+            );
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 32px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, border-color 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(229, 197, 138, 0.48);
+            box-shadow: 0 20px 55px rgba(80, 20, 37, 0.16);
+        }
+
+        .contact-card h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card-description {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 24px;
+        }
+
+        .info-icon {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 14px;
+            background: linear-gradient(
+                135deg,
+                rgba(127, 38, 59, 0.32),
+                rgba(229, 197, 138, 0.08)
+            );
+            border: 1px solid var(--border);
+            color: var(--gold);
+            font-size: 19px;
+        }
+
+        .info-content {
+            min-width: 0;
+            padding-top: 2px;
+        }
+
+        .info-content h3 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .info-content a,
+        .info-content p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-content a:hover {
+            color: var(--gold);
+        }
+
+        .social-heading {
+            margin-top: 32px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 11px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.025);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--gold-light);
+            border-color: var(--gold);
+            background: rgba(127, 38, 59, 0.23);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 19px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .form-group label {
+            color: #eaded2;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 15px;
+            background: rgba(8, 6, 7, 0.78);
+            border: 1px solid rgba(229, 197, 138, 0.18);
+            border-radius: 12px;
+            outline: none;
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #81736f;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(229, 197, 138, 0.08);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 15px 22px;
+            border: 1px solid rgba(229, 197, 138, 0.35);
+            border-radius: 12px;
+            color: #160c0e;
+            background: linear-gradient(
+                105deg,
+                var(--gold-light),
+                var(--gold)
+            );
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(229, 197, 138, 0.17);
+        }
+
+        .submit-btn:focus-visible,
+        .social-link:focus-visible,
+        .info-content a:focus-visible {
+            outline: 2px solid var(--gold-light);
+            outline-offset: 4px;
+        }
+
+        .form-note {
+            color: #998985;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 42px;
+            color: #998985;
+            font-size: 11px;
+        }
+
+        .footer-note span {
+            color: var(--burgundy-light);
+        }
+
+        @media (max-width: 850px) {
+            .contact-section {
+                padding: 105px 6% 55px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 28px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .contact-section {
+                padding: 95px 5% 40px;
+            }
+
+            .contact-card {
+                padding: 23px 19px;
+                border-radius: 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                margin-bottom: 32px;
+            }
+
+            .section-heading p {
+                font-size: 13px;
+            }
+
+            .contact-card h2 {
+                font-size: 20px;
+            }
+
+            .social-links {
+                gap: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="contact-section">
+        <div class="contact-container">
+
+            <header class="section-heading">
+                <span class="section-tag">Get In Touch</span>
+                <h1>Let's <span class="gradient-text">Connect</span></h1>
+                <p>
+                    Have a project idea, an opportunity, or just want to say hello?
+                    I'd love to hear from you. Feel free to reach out!
+                </p>
+            </header>
+
+            <div class="contact-grid">
+
+                <!-- Contact Information -->
+                <section class="contact-card">
+                    <h2>Contact Information</h2>
+                    <p class="card-description">
+                        You can connect with me through email or find me on my professional profiles.
+                        I'm always open to learning, collaboration, and new opportunities.
+                    </p>
+
+                    <div class="info-item">
+                        <div class="info-icon" aria-hidden="true">✉</div>
+                        <div class="info-content">
+                            <h3>Email Address</h3>
+                            <a href="mailto:nayanawalapane@gmail.com">
+                                nayanawalapane@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon" aria-hidden="true">💻</div>
+                        <div class="info-content">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/Nayan2309"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                github.com/Nayan2309
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon" aria-hidden="true">🔗</div>
+                        <div class="info-content">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/nayan-awalapane-2456"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                View my LinkedIn profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <h3 class="social-heading">Find Me Online</h3>
+
+                    <div class="social-links">
+                        <a class="social-link"
+                           href="https://github.com/Nayan2309"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            GitHub ↗
+                        </a>
+
+                        <a class="social-link"
+                           href="https://www.linkedin.com/in/nayan-awalapane-2456"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            LinkedIn ↗
+                        </a>
+
+                        <a class="social-link"
+                           href="mailto:nayanawalapane@gmail.com">
+                            Email Me ↗
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Contact Form -->
+                <section class="contact-card">
+                    <h2>Send Me a Message</h2>
+                    <p class="card-description">
+                        Fill in the details below and your email app will open with
+                        your message addressed to me.
+                    </p>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    autocomplete="name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="What would you like to discuss?"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Write your message here..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Send Message <span aria-hidden="true">➤</span>
+                        </button>
+
+                        <p class="form-note">
+                            This form opens your default email application.
+                            Your message will not be sent automatically from this website.
+                        </p>
+                    </form>
+                </section>
+
+            </div>
+
+            <p class="footer-note">
+                Designed with <span>♥</span> by Nayan Awalapane
+            </p>
+
+        </div>
+    </main>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const senderEmail = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            const recipient = "nayanawalapane@gmail.com";
+
+            const emailSubject = encodeURIComponent(subject);
+            const emailBody = encodeURIComponent(
+                "Name: " + name + "\n" +
+                "Email: " + senderEmail + "\n\n" +
+                "Message:\n" + message
+            );
+
+            const mailtoLink =
+                "mailto:" + recipient +
+                "?subject=" + emailSubject +
+                "&body=" + emailBody;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

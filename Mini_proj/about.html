@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090707">
+  <meta name="description" content="Nayan Awalapane — academic performance, education, career interests and technical background.">
+  <title>About | Nayan Awalapane</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg: #090707;
+      --bg-soft: #100b0c;
+      --card: #151011;
+      --burgundy: #7f263b;
+      --burgundy-light: #a33d55;
+      --gold: #e5c58a;
+      --gold-light: #f3dfb5;
+      --text: #f7f0e8;
+      --muted: #b9a9a7;
+      --border: rgba(229, 197, 138, 0.19);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 10% 10%, rgba(127, 38, 59, .17), transparent 36%),
+        var(--bg) !important;
+      color: var(--text) !important;
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1, h2, h3, .logo {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .site-header {
+      background: rgba(9, 7, 7, .9) !important;
+      border-bottom: 1px solid var(--border) !important;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .logo, .logo span {
+      color: var(--gold) !important;
+    }
+
+    .logo span {
+      color: var(--burgundy-light) !important;
+    }
+
+    .nav-links a {
+      color: var(--muted) !important;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--gold) !important;
+    }
+
+    .menu-toggle span {
+      background: var(--gold) !important;
+    }
+
+    .gradient-text {
+      color: var(--gold) !important;
+      background: linear-gradient(110deg, #f3dfb5, #e5c58a 55%, #a33d55);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .eyebrow,
+    .gallery-eyebrow {
+      color: var(--gold) !important;
+      letter-spacing: 2px;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .project-gallery-hero {
+      position: relative;
+      overflow: hidden;
+      background: transparent !important;
+    }
+
+    .gallery-hero-content h1 {
+      color: var(--text) !important;
+    }
+
+    .gallery-hero-content p,
+    .section-heading p,
+    .highlight-card p,
+    .academic-card p,
+    .career-detail p,
+    .career-detail li,
+    .education-content > p:not(.education-course),
+    .contribution-note p,
+    .career-panel p {
+      color: var(--muted) !important;
+      line-height: 1.85;
+    }
+
+    .gallery-hero-actions,
+    .panel-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      min-height: 44px;
+      box-sizing: border-box;
+      border-radius: 9px;
+      border: 1px solid var(--border) !important;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--burgundy), #57202e) !important;
+      color: #fff8ef !important;
+      border-color: rgba(229, 197, 138, .4) !important;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #9a344c, #6a2337) !important;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .025) !important;
+      color: var(--gold-light) !important;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(127, 38, 59, .2) !important;
+      border-color: rgba(229, 197, 138, .5) !important;
+      transform: translateY(-2px);
+    }
+
+    .orb {
+      border-color: rgba(229, 197, 138, .25) !important;
+    }
+
+    .orb-outer {
+      border-color: rgba(127, 38, 59, .65) !important;
+    }
+
+    .orb-core {
+      background: linear-gradient(135deg, var(--burgundy), #291016) !important;
+      color: var(--gold-light) !important;
+      border: 1px solid rgba(229, 197, 138, .5);
+      box-shadow: 0 0 40px rgba(127, 38, 59, .25);
+    }
+
+    .section-block {
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+
+    .section-heading h2 {
+      color: var(--text) !important;
+    }
+
+    .highlights-grid {
+      gap: 22px;
+    }
+
+    .highlight-card,
+    .academic-card,
+    .career-detail,
+    .education-card,
+    .contribution-note {
+      background: linear-gradient(145deg, #191112, #100b0c) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 16px;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .highlight-card:hover,
+    .academic-card:hover,
+    .career-detail:hover,
+    .education-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(229, 197, 138, .5) !important;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .highlight-card h3,
+    .academic-card h3,
+    .career-detail h3,
+    .education-content h3,
+    .contribution-note h3 {
+      color: var(--text) !important;
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(229, 197, 138, .25);
+      border-radius: 12px;
+      background: rgba(127, 38, 59, .22);
+      color: var(--gold) !important;
+    }
+
+    /* Academic results */
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .academic-card {
+      padding: 25px;
+    }
+
+    .academic-card .score-label {
+      font-size: 12px;
+      color: var(--muted) !important;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .academic-card .score {
+      display: block;
+      margin: 12px 0;
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(90deg, var(--gold-light), var(--gold), var(--burgundy-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .academic-card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .academic-card p {
+      font-size: 13px;
+    }
+
+    /* Education timeline */
+    .education-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .education-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      padding: 26px;
+    }
+
+    .education-marker {
+      display: grid;
+      place-items: center;
+      flex: 0 0 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(127, 38, 59, .28);
+      border: 1px solid rgba(229, 197, 138, .25);
+      color: var(--gold) !important;
+      font-weight: 700;
+    }
+
+    .education-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .education-status {
+      color: var(--gold) !important;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .education-content h3 {
+      margin: 9px 0;
+    }
+
+    .education-course {
+      color: var(--gold-light) !important;
+      font-size: .9rem;
+    }
+
+    .education-year {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      color: var(--gold-light) !important;
+      background: rgba(127, 38, 59, .25);
+      border: 1px solid rgba(229, 197, 138, .17);
+      border-radius: 30px;
+      font-size: .75rem;
+    }
+
+    /* Career section */
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .career-detail {
+      padding: 25px;
+    }
+
+    .career-detail h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .career-detail p,
+    .career-detail li {
+      font-size: 13px;
+    }
+
+    .career-detail ul {
+      padding-left: 20px;
+    }
+
+    .career-detail li::marker {
+      color: var(--gold);
+    }
+
+    .contribution-note {
+      padding: 28px;
+      border-style: dashed !important;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(127, 38, 59, .2), transparent 45%),
+        #120d0e !important;
+    }
+
+    .career-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: clamp(25px, 5vw, 48px);
+      border: 1px solid rgba(229, 197, 138, .3) !important;
+      border-radius: 20px;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(127, 38, 59, .3), transparent 45%),
+        linear-gradient(135deg, #1b1113, #0f0b0c) !important;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .22);
+    }
+
+    .career-panel > div:first-child {
+      flex: 1 1 320px;
+    }
+
+    .career-panel h2 {
+      color: var(--text) !important;
+    }
+
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 24px clamp(20px, 6vw, 80px);
+      background: #070606 !important;
+      border-top: 1px solid var(--border) !important;
+      color: var(--muted) !important;
+    }
+
+    .site-footer p {
+      color: var(--muted) !important;
+    }
+
+    .site-footer a {
+      color: var(--gold) !important;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      color: var(--gold-light) !important;
+    }
+
+    ::selection {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--gold) !important;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 760px) {
+      .academic-grid,
+      .career-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-block {
+        padding-top: 45px;
+        padding-bottom: 45px;
+      }
+
+      .education-card {
+        gap: 14px;
+        padding: 20px;
+      }
+
+      .education-marker {
+        flex-basis: 38px;
+        height: 38px;
+      }
+
+      .gallery-hero-actions .btn,
+      .panel-actions .btn {
+        flex: 1 1 100%;
+      }
+
+      .career-panel {
+        align-items: flex-start;
+      }
+
+      .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="logo" href="index.html">N<span>.</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false"
+      aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- INTRODUCTION -->
+  <section class="project-gallery-hero">
+    <div class="gallery-hero-content reveal">
+      <span class="gallery-eyebrow">A LITTLE ABOUT ME</span>
+
+      <h1>Beyond the <span class="gradient-text">code.</span></h1>
+
+      <p>
+        I'm Nayan Awalapane, a third-year B.Tech Computer Science and
+        Engineering student specializing in Artificial Intelligence
+        and Machine Learning. I enjoy exploring technology, learning
+        through practical projects, and continuously improving my
+        technical knowledge. I believe every project is an opportunity
+        to turn concepts into practical experience and become a better
+        problem solver.
+      </p>
+
+      <div class="gallery-hero-actions">
+        <a class="btn btn-primary" href="projects.html">Explore My Work ↗</a>
+        <a class="btn btn-secondary" href="contact.html">Connect With Me</a>
+      </div>
+    </div>
+
+    <div class="gallery-hero-decoration" aria-hidden="true">
+      <div class="orb orb-outer"></div>
+      <div class="orb orb-middle"></div>
+      <div class="orb orb-inner"></div>
+      <div class="orb-core">NA</div>
+    </div>
+  </section>
+
+  <!-- MY APPROACH -->
+  <section class="section-block reveal">
+    <div class="section-heading">
+      <span class="eyebrow">01 / MY APPROACH</span>
+      <h2>How I think, learn, <span class="gradient-text">and grow.</span></h2>
+      <p>
+        I believe the best way to learn technology is to practise it,
+        test ideas, solve problems, and improve from feedback.
+        Consistent learning and hands-on experience help turn
+        knowledge into useful skills.
+      </p>
+    </div>
+
+    <div class="highlights-grid">
+      <article class="highlight-card">
+        <div class="card-icon">◎</div>
+        <h3>My Background</h3>
+        <p>
+          I am pursuing B.Tech in Computer Science and Engineering
+          with a specialization in Artificial Intelligence and
+          Machine Learning. My academic journey is helping me
+          explore programming, intelligent systems, and software
+          development.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <div class="card-icon">↗</div>
+        <h3>My Mindset</h3>
+        <p>
+          I focus on learning step by step, experimenting with ideas,
+          and understanding how things work. I value practical
+          experience, constructive feedback, and learning from mistakes.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <div class="card-icon">✧</div>
+        <h3>My Goal</h3>
+        <p>
+          My goal is to strengthen my technical foundation, develop
+          practical projects, improve my problem-solving skills,
+          and prepare for opportunities where I can contribute
+          and continue growing in technology.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ACADEMIC PERFORMANCE -->
+  <section class="section-block reveal">
+    <div class="section-heading">
+      <span class="eyebrow">02 / ACADEMIC PERFORMANCE</span>
+      <h2>My academic <span class="gradient-text">snapshot.</span></h2>
+      <p>
+        A quick overview of my academic results and current
+        undergraduate journey.
+      </p>
+    </div>
+
+    <div class="academic-grid">
+      <article class="academic-card">
+        <span class="score-label">Class 10</span>
+        <strong class="score">82%</strong>
+        <h3>Secondary Education</h3>
+        <p>Swaminarayan School · 2022</p>
+      </article>
+
+      <article class="academic-card">
+        <span class="score-label">Class 12</span>
+        <strong class="score">71%</strong>
+        <h3>Higher Secondary</h3>
+        <p>Priyadarshini College, Nagpur · 2024</p>
+      </article>
+
+      <article class="academic-card">
+        <span class="score-label">B.Tech</span>
+        <strong class="score">7.5</strong>
+        <h3>CSE — AI &amp; ML</h3>
+        <p>Reported B.Tech score, as provided · Currently pursuing</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section-block reveal">
+    <div class="section-heading">
+      <span class="eyebrow">03 / EDUCATION</span>
+      <h2>My learning <span class="gradient-text">journey.</span></h2>
+      <p>
+        Every stage of my education has contributed to my academic
+        foundation and my interest in exploring technology.
+      </p>
+    </div>
+
+    <div class="education-list">
+      <article class="education-card">
+        <div class="education-marker">01</div>
+        <div class="education-content">
+          <span class="education-status">CURRENTLY PURSUING</span>
+          <h3>B.Tech — Computer Science &amp; Engineering</h3>
+          <p class="education-course">
+            Specialization: Artificial Intelligence &amp; Machine Learning
+          </p>
+          <p>
+            Currently pursuing my Bachelor of Technology in Computer
+            Science and Engineering with a specialization in Artificial
+            Intelligence and Machine Learning. I am exploring programming,
+            machine learning concepts, and software development through
+            coursework and practical projects.
+          </p>
+          <span class="education-year">In Progress</span>
+        </div>
+      </article>
+
+      <article class="education-card">
+        <div class="education-marker">02</div>
+        <div class="education-content">
+          <span class="education-status">COMPLETED</span>
+          <h3>Higher Secondary Education (12th)</h3>
+          <p class="education-course">Priyadarshini College, Nagpur</p>
+          <p>
+            Completed my Higher Secondary Education in 2024, building
+            a foundation for higher studies and continued learning.
+          </p>
+          <span class="education-year">2024</span>
+        </div>
+      </article>
+
+      <article class="education-card">
+        <div class="education-marker">03</div>
+        <div class="education-content">
+          <span class="education-status">COMPLETED</span>
+          <h3>Secondary Education (10th)</h3>
+          <p class="education-course">Swaminarayan School</p>
+          <p>
+            Completed my Secondary Education in 2022. My school years
+            helped me build a foundation in core academic subjects
+            and develop discipline and curiosity.
+          </p>
+          <span class="education-year">2022</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL DETAILS AND CAREER INTERESTS -->
+  <section class="section-block reveal">
+    <div class="section-heading">
+      <span class="eyebrow">04 / PROFESSIONAL DIRECTION</span>
+      <h2>Where I want to <span class="gradient-text">grow.</span></h2>
+      <p>
+        My current career interests are shaped by my CSE
+        specialization, coursework, and practical project work.
+      </p>
+    </div>
+
+    <div class="career-grid">
+      <article class="career-detail">
+        <h3>Career Interests</h3>
+        <ul>
+          <li>Artificial Intelligence and Machine Learning</li>
+          <li>Software and web application development</li>
+          <li>Data-driven applications and problem-solving</li>
+          <li>Internship and entry-level technology opportunities</li>
+        </ul>
+      </article>
+
+      <article class="career-detail">
+        <h3>Professional Goals</h3>
+        <p>
+          I aim to improve my programming fundamentals, build useful
+          projects, strengthen my understanding of data structures
+          and algorithms, and gain practical experience through
+          suitable internships and collaborative work.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- TECHNICAL INTERESTS -->
+  <section class="section-block reveal">
+    <div class="section-heading">
+      <span class="eyebrow">05 / TECHNICAL INTERESTS</span>
+      <h2>Areas I'm <span class="gradient-text">exploring.</span></h2>
+      <p>
+        These are the technology areas I am exploring through
+        academic learning, experimentation, and project work.
+      </p>
+    </div>
+
+    <div class="highlights-grid">
+      <article class="highlight-card">
+        <div class="card-icon">✧</div>
+        <h3>Artificial Intelligence</h3>
+        <p>
+          Exploring how intelligent systems can support people,
+          automate tasks, and help solve practical problems.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <div class="card-icon">▦</div>
+        <h3>Machine Learning</h3>
+        <p>
+          Learning about datasets, preprocessing, model training,
+          evaluation, and how machine learning can support
+          data-driven decisions.
+        </p>
+      </article>
+
+      <article class="highlight-card">
+        <div class="card-icon">⌘</div>
+        <h3>Software Development</h3>
+        <p>
+          Building web applications and learning how frontend
+          interfaces, backend logic, and data storage work together.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTRIBUTIONS AND PARTICIPATION -->
+  <section class="section-block reveal">
+    <div class="section-heading">
+      <span class="eyebrow">06 / CONTRIBUTIONS &amp; PARTICIPATION</span>
+      <h2>Learning beyond the <span class="gradient-text">classroom.</span></h2>
+      <p>
+        This section will highlight verified academic and professional
+        activities as I add them to my journey.
+      </p>
+    </div>
+
+    <div class="contribution-note">
+      <h3>More experiences to share soon</h3>
+      <p>
+        I am continuing to develop my skills through academic learning
+        and hands-on projects. Verified events, workshops, club
+        participation, volunteering, and other activities can be added
+        here as I take part in them.
+      </p>
+      <div class="gallery-hero-actions">
+        <a class="btn btn-primary" href="gallery.html">View Gallery ↗</a>
+        <a class="btn btn-secondary" href="projects.html">Explore Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="section-block reveal">
+    <div class="career-panel">
+      <div>
+        <span class="eyebrow">LET'S BUILD SOMETHING</span>
+        <h2>Good ideas get better when we share them.</h2>
+        <p>
+          Have a project idea, internship opportunity, or technical
+          topic to discuss? I am interested in learning, exchanging
+          ideas, and connecting with people who share an interest
+          in technology.
+        </p>
+      </div>
+      <div class="panel-actions">
+        <a class="btn btn-primary" href="contact.html">Contact Me ↗</a>
+        <a class="btn btn-secondary" href="projects.html">See Projects</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="currentYear">2026</span> Nayan Awalapane. Built with curiosity.</p>
+  <a href="index.html">Back to Home ↑</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

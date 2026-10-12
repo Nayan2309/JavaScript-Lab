@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080812">
+  <meta name="description" content="Academic moments, projects and learning journey of Nayan Awalapane.">
+  <title>Gallery | Nayan Awalapane</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .gallery-intro {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+      padding: 70px 20px 35px;
+    }
+
+    .gallery-intro h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      margin: 14px 0;
+    }
+
+    .gallery-intro p,
+    .gallery-category-heading p,
+    .gallery-card-content p,
+    .gallery-cta p {
+      color: #a7b0c8;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .gallery-category {
+      margin-bottom: 55px;
+    }
+
+    .gallery-category-heading {
+      margin-bottom: 22px;
+    }
+
+    .gallery-category-heading h2 {
+      font-size: clamp(23px, 4vw, 32px);
+      margin: 8px 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-card {
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(155, 166, 255, .18);
+      background: rgba(17, 23, 45, .78);
+      transition: transform .3s ease, border-color .3s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(98, 232, 255, .55);
+    }
+
+    .gallery-image-wrap {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 25% 25%, rgba(167, 139, 250, .22), transparent 40%),
+        linear-gradient(135deg, #151630, #0b1428);
+    }
+
+    .gallery-image-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .gallery-card:hover .gallery-image-wrap img {
+      transform: scale(1.04);
+    }
+
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 170px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(98,232,255,.13), transparent 45%),
+        linear-gradient(145deg, #151630, #0b1428);
+    }
+
+    .gallery-placeholder .visual-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      color: #62e8ff;
+      border: 1px solid rgba(98,232,255,.3);
+      background: rgba(98,232,255,.07);
+      box-shadow: 0 0 28px rgba(98,232,255,.08);
+    }
+
+    .gallery-placeholder h3 {
+      font-size: 15px;
+      color: #f1f3ff;
+    }
+
+    .gallery-placeholder p {
+      color: #a7b0c8;
+      font-size: 11px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .gallery-card-content {
+      padding: 20px;
+    }
+
+    .gallery-card-content h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .gallery-card-content p {
+      margin: 0;
+    }
+
+    .gallery-tag {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      color: #9befff;
+      border: 1px solid rgba(98, 232, 255, .22);
+      background: rgba(98, 232, 255, .06);
+      font-size: 10px;
+      letter-spacing: .5px;
+    }
+
+    .certificate-preview {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 190px;
+      border: 0;
+      background: white;
+    }
+
+    .gallery-cta {
+      text-align: center;
+      padding: 30px;
+      margin-bottom: 45px;
+      border: 1px solid rgba(155, 166, 255, .18);
+      border-radius: 20px;
+      background: rgba(17, 23, 45, .65);
+    }
+
+    .gallery-cta p {
+      max-width: 650px;
+      margin: 12px auto 20px;
+    }
+
+    .gallery-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 850px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-intro {
+        padding-top: 45px;
+      }
+
+      .gallery-card-content {
+        padding: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="logo" href="index.html">N<span>.</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false"
+      aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="project-gallery-hero">
+    <div class="gallery-hero-content reveal">
+      <span class="gallery-eyebrow">MY VISUAL JOURNEY</span>
+      <h1>Moments of <span class="gradient-text">learning.</span></h1>
+      <p>
+        A visual collection of academic memories, project development,
+        interface design and continuous learning throughout my journey
+        as a Computer Science student.
+      </p>
+      <div class="gallery-hero-actions">
+        <a class="btn btn-primary" href="projects.html">Explore Projects ↗</a>
+        <a class="btn btn-secondary" href="achievements.html">View Achievements</a>
+      </div>
+    </div>
+
+    <div class="gallery-hero-decoration" aria-hidden="true">
+      <div class="orb orb-outer"></div>
+      <div class="orb orb-middle"></div>
+      <div class="orb orb-inner"></div>
+      <div class="orb-core">NA</div>
+    </div>
+  </section>
+
+  <div class="section-block">
+
+    <!-- 01: ACADEMIC MOMENTS -->
+    <section class="gallery-category reveal">
+      <div class="gallery-category-heading">
+        <span class="eyebrow">01 / ACADEMIC</span>
+        <h2>Academic <span class="gradient-text">moments.</span></h2>
+        <p>A glimpse into learning, growth and the college experience.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery/academic-1.jpg"
+                 alt="Academic moment one"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="gallery-placeholder" style="display:none">
+              <div class="visual-icon">✦</div>
+              <h3>Learning Every Day</h3>
+              <p>Academic journey · Knowledge · Growth</p>
+            </div>
+          </div>
+          <div class="gallery-card-content">
+            <h3>Academic Memory</h3>
+            <p>Every learning experience adds something new to the journey.</p>
+            <span class="gallery-tag">ACADEMIC</span>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery/academic-2.jpg"
+                 alt="Academic moment two"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="gallery-placeholder" style="display:none">
+              <div class="visual-icon">⌘</div>
+              <h3>Learn · Explore · Improve</h3>
+              <p>Curiosity turns lessons into experience.</p>
+            </div>
+          </div>
+          <div class="gallery-card-content">
+            <h3>Learning Experience</h3>
+            <p>Building knowledge through study, practice and exploration.</p>
+            <span class="gallery-tag">LEARNING</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 02: BUILT THROUGH PRACTICE -->
+    <section class="gallery-category reveal">
+      <div class="gallery-category-heading">
+        <span class="eyebrow">02 / PROJECTS</span>
+        <h2>Built through <span class="gradient-text">practice.</span></h2>
+        <p>Projects that connect programming concepts with practical applications.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery/practice-1.png"
+                 alt="Adaptive Irrigation System project"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="gallery-placeholder" style="display:none">
+              <div class="visual-icon">♧</div>
+              <h3>Adaptive Irrigation</h3>
+              <p>Weather-aware recommendations · Agriculture · Technology</p>
+            </div>
+          </div>
+          <div class="gallery-card-content">
+            <h3>Adaptive Irrigation System</h3>
+            <p>A decision-support project exploring weather and crop-based irrigation.</p>
+            <span class="gallery-tag">AI / ML PROJECT</span>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery/practice-2.png"
+                 alt="Plagiarism Awareness Assistant project"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="gallery-placeholder" style="display:none">
+              <div class="visual-icon">⌕</div>
+              <h3>Plagiarism Awareness</h3>
+              <p>Document analysis · Similarity checking · Web application</p>
+            </div>
+          </div>
+          <div class="gallery-card-content">
+            <h3>Plagiarism Awareness Assistant</h3>
+            <p>A web application concept for document analysis and plagiarism awareness.</p>
+            <span class="gallery-tag">WEB APPLICATION</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03: HCI DESIGN -->
+    <section class="gallery-category reveal">
+      <div class="gallery-category-heading">
+        <span class="eyebrow">03 / INTERFACE DESIGN</span>
+        <h2>Design &amp; <span class="gradient-text">interaction.</span></h2>
+        <p>Human-computer interaction focuses on making digital experiences usable and intuitive.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <div class="gallery-image-wrap">
+            <img src="images/gallery/hci-design.png"
+                 alt="Design and Implementation of Human-Computer Interfaces"
+                 loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="gallery-placeholder" style="display:none">
+              <div class="visual-icon">▣</div>
+              <h3>Human-Computer Interfaces</h3>
+              <p>Wireframes · Visual hierarchy · User experience</p>
+            </div>
+          </div>
+          <div class="gallery-card-content">
+            <h3>Design &amp; Implementation of Human-Computer Interfaces</h3>
+            <p>Exploring interface structure, usability and user-centred design.</p>
+            <span class="gallery-tag">HCI / UI DESIGN</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04: CERTIFICATES -->
+    <section class="gallery-category reveal">
+      <div class="gallery-category-heading">
+        <span class="eyebrow">04 / CERTIFICATES</span>
+        <h2>Learning and <span class="gradient-text">recognition.</span></h2>
+        <p>Certificates and learning milestones from the journey so far.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <div class="gallery-image-wrap">
+            <iframe
+              class="certificate-preview"
+              src="images/infosys-certificate.pdf#toolbar=0&navpanes=0"
+              title="Infosys Certificate"
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="gallery-card-content">
+            <h3>Infosys Certificate</h3>
+            <p>View the certificate preview. Open the Achievements page for more details.</p>
+            <span class="gallery-tag">CERTIFICATE</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="gallery-cta reveal">
+      <h2>Curious about my work?</h2>
+      <p>
+        Explore the projects, learn about my background,
+        or get in touch to connect.
+      </p>
+      <div class="gallery-hero-actions">
+        <a class="btn btn-primary" href="projects.html">View Projects ↗</a>
+        <a class="btn btn-secondary" href="contact.html">Contact Me</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="currentYear">2026</span> Nayan Awalapane. Built with curiosity.</p>
+  <a href="index.html">Back to Home ↑</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
